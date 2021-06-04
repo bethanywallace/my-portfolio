@@ -3,13 +3,14 @@ import sanityClient from "../client.js";
 import pattern from "../pattern.jpg";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import { getDefaultNormalizer } from "@testing-library/dom";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
 
-export default function About() {
+export default function ContactMe() {
   const [author, setAuthor] = useState(null);
 
   useEffect(() => {
@@ -37,15 +38,20 @@ export default function About() {
             alt={author.name}
           />
           <div className="text-lg flex flex-col justify-center">
-            <h1 className="cursive text-6xl text-green-300 mb-4">
-              Hi! I'm <span className="text-green-100">{author.name}</span>
-            </h1>
+            <h1 className="cursive text-6xl text-green-300 mb-4">Contact Me</h1>
             <div className="prose lg:prose-xl text-white">
-              <BlockContent
-                blocks={author.bio}
-                projectId="bc2jh1lm"
-                dataset="production"
-              />
+              <p>
+                Email:{" "}
+                <a href="mailto:bethanywallace73@gmail.com">
+                  bethanywallace73@gmail.com{" "}
+                </a>
+              </p>
+              <p>
+                LinkedIn:{" "}
+                <a href="https://www.linkedin.com/in/bethany-wallace-7619aa1b7/">
+                  Bethany Wallace
+                </a>
+              </p>
             </div>
           </div>
         </section>

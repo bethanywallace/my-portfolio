@@ -30,11 +30,11 @@ export default function NavBar() {
             Projects
           </NavLink>
           <NavLink
-            to="/about"
+            to="/contact"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-pink-300 hover:text-green-600"
             activeClassName="text-green-100 bg-green-700"
           >
-            About Me
+            Contact Me
           </NavLink>
         </nav>
         <div className="inline-flex py-3 px-3 my-6">
